@@ -82,13 +82,25 @@ export const SecondaryProductInfo = styled.div`
   }
 `
 
-export const CartButton = styled.div`
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  width: 50px;
-  border: 0.3px solid #bfbfbf;
-  border-radius: 4px;
-  background-color: transparent;
+export const QuantityButton = styled.div`
+  position: relative;
+
+  .label {
+    position: absolute;
+    top: -2em;
+    left: 0;
+
+    font-size: 5px;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 50px;
+    border: 0.3px solid #bfbfbf;
+    border-radius: 4px;
+    background-color: transparent;
+  }
 
   .decrease,
   .quantity,
@@ -110,7 +122,13 @@ export const CartButton = styled.div`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    width: 98px;
+    .label {
+      display: none;
+    }
+
+    .buttons {
+      width: 98px;
+    }
 
     .decrease,
     .quantity,

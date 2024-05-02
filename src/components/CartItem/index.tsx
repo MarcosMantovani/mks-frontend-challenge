@@ -29,21 +29,26 @@ const CartItem = ({ product }: Props) => {
 
   return (
     <S.Container>
-      <S.CloseButton onClick={removeProduct}>X</S.CloseButton>
+      <S.CloseButton onClick={removeProduct} whileHover={{ scale: 1.1 }}>
+        X
+      </S.CloseButton>
       <S.MainProductInfo>
         <img className="productPhoto" src={product.photo} alt="" />
         <p className="productName">{product.name}</p>
       </S.MainProductInfo>
       <S.SecondaryProductInfo>
-        <S.CartButton>
-          <button onClick={subtractProduct} className="decrease">
-            -
-          </button>
-          <p className="quantity">{quantity}</p>
-          <button onClick={addProduct} className="increase">
-            +
-          </button>
-        </S.CartButton>
+        <S.QuantityButton>
+          <span className="label">Qntd:</span>
+          <div className="buttons">
+            <button onClick={subtractProduct} className="decrease">
+              -
+            </button>
+            <p className="quantity">{quantity}</p>
+            <button onClick={addProduct} className="increase">
+              +
+            </button>
+          </div>
+        </S.QuantityButton>
         <p className="productPrice">R${Math.trunc(product.price)}</p>
       </S.SecondaryProductInfo>
     </S.Container>
