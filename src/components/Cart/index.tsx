@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { close } from '../../store/reducers/cart'
+import { close, clear } from '../../store/reducers/cart'
 import { RootReducer } from '../../store'
 
 import { getTotalPrice } from '../../utils'
@@ -18,12 +18,14 @@ const Cart = () => {
 
   const closeCart = () => dispatch(close())
 
+  const clearCart = () => dispatch(clear())
+
   const totalPrice = getTotalPrice(items, quantities)
 
   return (
     <S.Container $isOpen={isOpen}>
       <S.CloseButton onClick={closeCart}>X</S.CloseButton>
-      <div>
+      <div className="content">
         <S.Title>
           Carrinho
           <br />
@@ -41,7 +43,9 @@ const Cart = () => {
         <p className="totalText">Teste:</p>
         <p>{totalPrice}</p>
       </S.CartFooter>
-      <S.FinishPurchaseButtoin>Finalizar Compra</S.FinishPurchaseButtoin>
+      <S.FinishPurchaseButtoin onClick={clearCart}>
+        Finalizar Compra
+      </S.FinishPurchaseButtoin>
     </S.Container>
   )
 }

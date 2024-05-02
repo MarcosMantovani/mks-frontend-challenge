@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Container = styled.header`
   position: fixed;
@@ -10,6 +10,12 @@ export const Container = styled.header`
   height: 101px;
   padding: 28px 88px 28px 65px;
   background-color: ${colors.blue};
+  z-index: 1;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 48px;
+    padding: 2px 23px 2px 20px;
+  }
 `
 
 export const Title = styled.div`
@@ -28,26 +34,45 @@ export const Title = styled.div`
     color: ${colors.white};
     padding-top: 8px;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 32px;
+    .subtitle {
+      font-size: 16px;
+    }
+  }
 `
 
 export const CartButton = styled.button`
   background-color: ${colors.white};
   display: flex;
   align-items: center;
-  column-gap: 16px;
+  justify-content: space-between;
   width: 90px;
   height: 45px;
+  padding: 0 27px 0 15px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-
-  .cartIcon {
-    margin-left: 15px;
-  }
 
   .cartCounter {
     color: ${colors.black};
     font-weight: 700;
     font-size: 18px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 52px;
+    height: 26px;
+    padding: 0 8px 0 9px;
+
+    .cartIcon {
+      width: 11px;
+      height: 10px;
+    }
+
+    .cartCounter {
+      font-size: 12px;
+    }
   }
 `

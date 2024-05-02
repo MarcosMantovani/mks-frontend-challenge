@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 type ContainerProps = {
   $isOpen: boolean
 }
 
 export const Container = styled.div<ContainerProps>`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
@@ -17,6 +17,16 @@ export const Container = styled.div<ContainerProps>`
   height: 100svh;
   padding: 36px 54px 0 47px;
   background-color: ${colors.blue};
+  z-index: 1;
+
+  .content {
+    overflow-y: scroll;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 330px;
+    padding: 36px 46px 0 34px;
+  }
 `
 
 export const Title = styled.h3`
@@ -40,6 +50,10 @@ export const CloseButton = styled.button`
   font-size: 20px;
   line-height: 15px;
   cursor: pointer;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    color: ${colors.blue};
+  }
 `
 
 export const CartFooter = styled.div`
@@ -50,6 +64,10 @@ export const CartFooter = styled.div`
   color: ${colors.white};
   font-size: 28px;
   font-weight: 700;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding-bottom: 108px;
+  }
 `
 
 export const FinishPurchaseButtoin = styled.button`
@@ -63,6 +81,12 @@ export const FinishPurchaseButtoin = styled.button`
   color: ${colors.white};
   font-size: 28px;
   font-weight: 700;
+  cursor: pointer;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 26px 0;
+    font-size: 20px;
+  }
 `
 
 export const CartItemList = styled.ul`
