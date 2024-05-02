@@ -1,15 +1,14 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+
 import { breakpoints, colors } from '../../styles'
 
-type ContainerProps = {
-  $isOpen: boolean
-}
-
-export const Container = styled.div<ContainerProps>`
+export const Container = styled(motion.div)`
+  position: absolute;
   position: fixed;
   top: 0;
   right: 0;
-  display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 486px;
@@ -36,7 +35,7 @@ export const Title = styled.h3`
   margin-bottom: 64px;
 `
 
-export const CloseButton = styled.button`
+export const CloseButton = styled(motion.button)`
   position: absolute;
   top: 47px;
   right: 33px;
@@ -70,7 +69,7 @@ export const CartFooter = styled.div`
   }
 `
 
-export const FinishPurchaseButtoin = styled.button`
+export const FinishPurchaseButtoin = styled(motion.button)`
   position: absolute;
   bottom: 0;
   right: 0;
