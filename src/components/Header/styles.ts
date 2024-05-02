@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { breakpoints, colors } from '../../styles'
+import { motion } from 'framer-motion'
 
 export const Container = styled.header`
   position: fixed;
@@ -18,7 +19,7 @@ export const Container = styled.header`
   }
 `
 
-export const Title = styled.div`
+export const Title = styled(motion.h1)`
   display: flex;
   align-items: center;
   column-gap: 4px;
@@ -43,7 +44,7 @@ export const Title = styled.div`
   }
 `
 
-export const CartButton = styled.button`
+export const CartButton = styled(motion.button)`
   background-color: ${colors.white};
   display: flex;
   align-items: center;

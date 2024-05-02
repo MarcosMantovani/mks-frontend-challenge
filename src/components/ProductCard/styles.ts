@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 import { colors } from '../../styles'
+import { motion } from 'framer-motion'
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   position: relative;
   display: flex;
   flex-direction: column;
   width: 218px;
-  height: 300px;
+  height: 285px;
   background-color: ${colors.white};
   box-shadow: 0px 2px 8px 0px #00000022;
   border-radius: 8px;
@@ -17,14 +18,22 @@ export const Card = styled.div`
     flex-grow: 1;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     padding: 16px;
   }
 `
 
-export const Photo = styled.img`
-  max-height: 138px;
+export const Photo = styled.div`
   height: 138px;
+  width: 172px;
+  margin-bottom: 16px;
+
+  .image {
+    width: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+    max-height: 138px;
+    max-width: 172px;
+  }
 `
 
 export const MainInfo = styled.div`
@@ -32,6 +41,12 @@ export const MainInfo = styled.div`
   justify-content: space-between;
   width: 100%;
   column-gap: 4px;
+
+  .name {
+    max-height: 2.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   .price {
     display: flex;
@@ -50,12 +65,15 @@ export const MainInfo = styled.div`
 `
 
 export const Description = styled.p`
+  display: flex;
+  align-items: end;
+  height: 100%;
   font-size: 10px;
   font-weight: 300;
   line-height: 12px;
 `
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   display: flex;
   justify-content: center;
   column-gap: 14px;
@@ -66,6 +84,11 @@ export const Button = styled.button`
   border-radius: 0px 0px 8px 8px;
 
   cursor: pointer;
+
+  .icon {
+    width: 15px;
+    height: 18px;
+  }
 
   .priceText {
     color: ${colors.white};

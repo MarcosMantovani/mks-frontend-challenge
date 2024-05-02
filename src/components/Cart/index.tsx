@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { motion } from 'framer-motion'
 
 import { close, clear } from '../../store/reducers/cart'
 import { RootReducer } from '../../store'
@@ -8,6 +9,7 @@ import { getTotalPrice } from '../../utils'
 import CartItem from '../CartItem'
 
 import * as S from './styles'
+import { colors } from '../../styles'
 
 const Cart = () => {
   const dispatch = useDispatch()
@@ -23,8 +25,15 @@ const Cart = () => {
   const totalPrice = getTotalPrice(items, quantities)
 
   return (
-    <S.Container $isOpen={isOpen}>
-      <S.CloseButton onClick={closeCart}>X</S.CloseButton>
+    <S.Container
+      initial={{ x: '100vw' }}
+      exit={{ x: '100%' }}
+      animate={{ x: isOpen ? 0 : '100vw' }}
+      transition={{ type: 'spring', stiffness: 200, damping: 30 }}
+    >
+      <S.CloseButton onClick={closeCart} whileHover={{ scale: 1.1 }}>
+        X
+      </S.CloseButton>
       <div className="content">
         <S.Title>
           Carrinho
@@ -41,9 +50,13 @@ const Cart = () => {
       </div>
       <S.CartFooter>
         <p className="totalText">Teste:</p>
-        <p>{totalPrice}</p>
+        <p>R${totalPrice}</p>
       </S.CartFooter>
-      <S.FinishPurchaseButtoin onClick={clearCart}>
+      <S.FinishPurchaseButtoin
+        onClick={clearCart}
+        whileHover={{ backgroundColor: `${colors.gray}` }}
+        transition={{ duration: 0.2 }}
+      >
         Finalizar Compra
       </S.FinishPurchaseButtoin>
     </S.Container>
