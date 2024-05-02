@@ -1,19 +1,35 @@
 import * as S from './styles'
 
 import ProductCard from '../ProductCard'
+import { useGetProductsQuery } from '../../services/api'
+import ProductCardSkeleton from '../ProductCardSkeleton'
 
-type Props = {
-  products: Product[]
-}
+const ProductsList = () => {
+  const { data: productsResponse, isLoading } = useGetProductsQuery()
 
-const ProductsList = ({ products }: Props) => {
+  if (isLoading) {
+    return (
+      <S.List>
+        {[...Array(8)].map((_, index) => (
+          <li key={index}>
+            <ProductCardSkeleton />
+          </li>
+        ))}
+      </S.List>
+    )
+  }
+
   return (
     <S.List>
-      {products.map((product) => (
-        <li key={product.id}>
-          <ProductCard product={product} />
-        </li>
-      ))}
+      {productsResponse && (
+        <>
+          {productsResponse.products.map((product: Product) => (
+            <li key={product.id}>
+              <ProductCard product={product} />
+            </li>
+          ))}
+        </>
+      )}
     </S.List>
   )
 }
