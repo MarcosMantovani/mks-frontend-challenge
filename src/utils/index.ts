@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 
-import { RootReducer } from '../store'
+import { RootState } from '../store'
 
 export const getTotalPrice = (
   items: Product[],
@@ -18,6 +18,6 @@ export const getTotalPrice = (
 }
 
 export const useCheckProductInCart = (productId: number): boolean => {
-  const items = useSelector((state: RootReducer) => state.cart.items)
+  const items = useSelector((state: RootState) => state.cart.items)
   return items.some((item) => item.id === productId)
 }
