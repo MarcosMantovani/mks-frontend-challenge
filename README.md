@@ -6,6 +6,19 @@ This project is a simple electronic store application built with [Create React A
 
 This application simulates an electronic store where users can browse through various electronic products and a functional cart.
 
+## Technologies Used
+
+- TypeScript
+- React
+- React-query
+- Redux
+- Styled-components
+- Framer-motion
+- Jest and Testing Library
+- react-loading-skeleton
+
+Quality and consistency of the code are ensured through Prettier and ESLint.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
