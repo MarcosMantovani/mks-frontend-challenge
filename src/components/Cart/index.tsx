@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 
 import { close, clear } from '../../store/reducers/cart'
-import { RootReducer } from '../../store'
+import { RootState } from '../../store'
 
 import { getTotalPrice } from '../../utils'
 
@@ -15,7 +15,7 @@ const Cart = () => {
   const dispatch = useDispatch()
 
   const { isOpen, items, quantities } = useSelector(
-    (state: RootReducer) => state.cart
+    (state: RootState) => state.cart
   )
   const [purchaseCompleted, setPurchaseCompleted] = useState(false)
 
@@ -41,11 +41,15 @@ const Cart = () => {
       animate={{ x: isOpen ? 0 : '100vw' }}
       transition={{ type: 'spring', stiffness: 200, damping: 30 }}
     >
-      <S.CloseButton onClick={closeCart} whileHover={{ scale: 1.1 }}>
+      <S.CloseButton
+        className="close-button"
+        onClick={closeCart}
+        whileHover={{ scale: 1.1 }}
+      >
         X
       </S.CloseButton>
       <div className="content">
-        <S.Title>
+        <S.Title data-testid="title">
           Carrinho
           <br />
           de compras
@@ -59,7 +63,7 @@ const Cart = () => {
         </S.CartItemList>
       </div>
       <S.CartFooter>
-        <p className="totalText">Teste:</p>
+        <p className="totalText">Total:</p>
         <p>R${totalPrice}</p>
       </S.CartFooter>
       <S.FinishPurchaseButton
