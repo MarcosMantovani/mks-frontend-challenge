@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 import { close, clear } from '../../store/reducers/cart'
 import { RootReducer } from '../../store'
@@ -17,12 +17,22 @@ const Cart = () => {
   const { isOpen, items, quantities } = useSelector(
     (state: RootReducer) => state.cart
   )
+  const [purchaseCompleted, setPurchaseCompleted] = useState(false)
 
   const closeCart = () => dispatch(close())
 
-  const clearCart = () => dispatch(clear())
+  const finalizePurchase = () => {
+    dispatch(clear())
+    setPurchaseCompleted(true)
+  }
 
   const totalPrice = getTotalPrice(items, quantities)
+
+  useEffect(() => {
+    if (items.length > 0 && purchaseCompleted) {
+      setPurchaseCompleted(false)
+    }
+  }, [items.length, purchaseCompleted])
 
   return (
     <S.Container
@@ -52,13 +62,17 @@ const Cart = () => {
         <p className="totalText">Teste:</p>
         <p>R${totalPrice}</p>
       </S.CartFooter>
-      <S.FinishPurchaseButtoin
-        onClick={clearCart}
+      <S.FinishPurchaseButton
+        onClick={finalizePurchase}
+        initial={{ backgroundColor: colors.black }}
+        animate={{
+          backgroundColor: purchaseCompleted ? colors.gray : colors.black
+        }}
         whileHover={{ backgroundColor: `${colors.gray}` }}
         transition={{ duration: 0.2 }}
       >
-        Finalizar Compra
-      </S.FinishPurchaseButtoin>
+        {purchaseCompleted ? <>Compra Finalizada!</> : <>Finalizar Compra</>}
+      </S.FinishPurchaseButton>
     </S.Container>
   )
 }

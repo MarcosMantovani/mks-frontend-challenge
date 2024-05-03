@@ -69,7 +69,7 @@ export const CartFooter = styled.div`
   }
 `
 
-export const FinishPurchaseButtoin = styled(motion.button)`
+export const FinishPurchaseButton = styled(motion.button)`
   position: absolute;
   bottom: 0;
   right: 0;

@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux'
+import { motion } from 'framer-motion'
 
 import { add } from '../../store/reducers/cart'
 
@@ -8,7 +9,6 @@ import plusIcon from '../../assets/images/plus-outline.svg'
 import * as S from './styles'
 import { useCheckProductInCart } from '../../utils'
 import { colors } from '../../styles'
-import { motion } from 'framer-motion'
 
 type Props = {
   product: Product

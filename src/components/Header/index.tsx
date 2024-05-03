@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { motion, useAnimation } from 'framer-motion'
+import { useEffect } from 'react'
 
 import { RootReducer } from '../../store'
 import { open } from '../../store/reducers/cart'
@@ -7,7 +8,6 @@ import { open } from '../../store/reducers/cart'
 import cartIcon from '../../assets/images/cart-icon.svg'
 
 import * as S from './styles'
-import { useEffect } from 'react'
 
 const Header = () => {
   const dispatch = useDispatch()
