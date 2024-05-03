@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { CloseButton as CartCloseButton } from '../Cart/styles'
-
 import { breakpoints, colors } from '../../styles'
 
 export const Container = styled.div`

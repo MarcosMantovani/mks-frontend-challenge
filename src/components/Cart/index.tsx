@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 import { close, clear } from '../../store/reducers/cart'
 import { RootState } from '../../store'
 
-import { getTotalPrice } from '../../utils'
-
 import CartItem from '../CartItem'
+
+import { getTotalPrice } from '../../utils'
 
 import * as S from './styles'
 import { colors } from '../../styles'

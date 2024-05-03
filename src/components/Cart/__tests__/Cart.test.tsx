@@ -1,4 +1,4 @@
-import { screen, render, fireEvent, getByTestId } from '@testing-library/react'
+import { fireEvent } from '@testing-library/react'
 
 import Cart from '..'
 

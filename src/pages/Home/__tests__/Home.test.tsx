@@ -1,4 +1,5 @@
 import Home from '..'
+
 import { renderWithProvider } from '../../../utils/tests'
 
 describe('Test for the Home component', () => {

@@ -1,5 +1,5 @@
-import { screen } from '@testing-library/react'
 import ProductsList from '..'
+
 import { renderWithProvider } from '../../../utils/tests'
 
 describe('Test for the Home component', () => {
