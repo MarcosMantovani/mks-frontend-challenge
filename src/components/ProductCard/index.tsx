@@ -54,9 +54,9 @@ const ProductCard = ({ product }: Props) => {
           className="icon"
           src={isProductInCart ? plusIcon : shoppingBag}
           alt="Shopping bag"
-          initial={{ opacity: 0 }} // define a opacidade inicial como 0
-          animate={{ opacity: 1 }} // define a opacidade final como 1
-          transition={{ duration: 0.5 }} // define a duração da transição
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         />
         <p className="priceText">Comprar</p>
       </S.Button>
