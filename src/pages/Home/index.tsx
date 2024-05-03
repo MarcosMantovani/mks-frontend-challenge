@@ -5,7 +5,7 @@ import * as S from './styles'
 const Home = () => {
   return (
     <S.Container className="container">
-      <ProductsList />
+      <ProductsList data-testid="products-list" />
     </S.Container>
   )
 
