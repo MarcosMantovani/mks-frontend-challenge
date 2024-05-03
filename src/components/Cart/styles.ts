@@ -14,13 +14,9 @@ export const Container = styled(motion.div)`
   width: 486px;
   height: 100vh;
   height: 100svh;
-  padding: 36px 54px 0 47px;
+  padding: 36px 40px 0 47px;
   background-color: ${colors.blue};
   z-index: 1;
-
-  .content {
-    overflow-y: scroll;
-  }
 
   @media (max-width: ${breakpoints.tablet}) {
     width: 330px;
@@ -92,4 +88,10 @@ export const CartItemList = styled.ul`
   display: flex;
   flex-direction: column;
   row-gap: 22px;
+  padding-top: 5px;
+  height: auto;
+  max-height: 60vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  scrollbar-color: ${colors.white};
 `
