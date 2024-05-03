@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react'
+
 import Header from '..'
 
 import { renderWithProvider } from '../../../utils/tests'

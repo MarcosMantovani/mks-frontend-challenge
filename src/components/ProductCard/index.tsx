@@ -6,8 +6,9 @@ import { add } from '../../store/reducers/cart'
 import shoppingBag from '../../assets/images/shopping-bag.svg'
 import plusIcon from '../../assets/images/plus-outline.svg'
 
-import * as S from './styles'
 import { useCheckProductInCart } from '../../utils'
+
+import * as S from './styles'
 import { colors } from '../../styles'
 
 type Props = {

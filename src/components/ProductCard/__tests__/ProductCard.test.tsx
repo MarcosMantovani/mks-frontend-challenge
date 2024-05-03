@@ -1,5 +1,7 @@
-import { screen, render, fireEvent } from '@testing-library/react'
+import { screen, fireEvent } from '@testing-library/react'
+
 import ProductCard from '..'
+
 import { renderWithProvider } from '../../../utils/tests'
 
 const initialState = {
