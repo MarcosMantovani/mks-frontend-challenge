@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 
 import { add, subtract, remove } from '../../store/reducers/cart'
-import { RootReducer } from '../../store'
+import { RootState } from '../../store'
 
 import * as S from './styles'
 
@@ -12,7 +12,7 @@ type Props = {
 const CartItem = ({ product }: Props) => {
   const dispatch = useDispatch()
   const cartQuantities = useSelector(
-    (state: RootReducer) => state.cart.quantities
+    (state: RootState) => state.cart.quantities
   )
 
   const quantity = cartQuantities[product.id] || 0
