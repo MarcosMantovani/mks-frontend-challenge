@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { breakpoints, colors } from '../../styles'
 import { motion } from 'framer-motion'
+
+import { breakpoints, colors } from '../../styles'
 
 export const Container = styled.header`
   position: fixed;

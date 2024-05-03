@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 
 import { add, subtract, remove } from '../../store/reducers/cart'
+import { RootReducer } from '../../store'
 
 import * as S from './styles'
-import { RootReducer } from '../../store'
 
 type Props = {
   product: Product

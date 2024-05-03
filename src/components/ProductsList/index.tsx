@@ -1,8 +1,9 @@
-import * as S from './styles'
-
-import ProductCard from '../ProductCard'
 import { useGetProductsQuery } from '../../services/api'
 import ProductCardSkeleton from '../ProductCardSkeleton'
+
+import ProductCard from '../ProductCard'
+
+import * as S from './styles'
 
 const ProductsList = () => {
   const { data: productsResponse, isLoading } = useGetProductsQuery()
