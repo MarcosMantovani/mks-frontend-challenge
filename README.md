@@ -1,3 +1,11 @@
+# Electronic Store - React App
+
+This project is a simple electronic store application built with [Create React App](https://github.com/facebook/create-react-app).
+
+## Description
+
+This application simulates an electronic store where users can browse through various electronic products and a functional cart.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
